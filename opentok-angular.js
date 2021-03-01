@@ -33,8 +33,24 @@ ng.module('opentok', [])
         streams: [],
         connections: [],
         publishers: [],
-        init: function(apiKey, sessionId, token, cb) {
-          this.session = OT.initSession(apiKey, sessionId);
+        init: function(apiKey, sessionId, token, username, credential, cb) {
+          this.session = OT.initSession(apiKey, sessionId, {
+            iceConfig: {
+              includeServers: 'custom',
+              transportPolicy: 'relay',
+              customServers: [
+                {
+                  urls: [
+                    'turn:turn001-pek.tokbox.com:443?transport=udp',
+                    'turn:turn001-pek.tokbox.com:443?transport=tcp',
+                    'turns:turn001-pek.tokbox.com:443?transport=tcp'
+                  ],
+                  username,
+                  credential
+                },
+              ],
+            },
+          });
 
           OTSession.session.on({
             sessionConnected: function() {
