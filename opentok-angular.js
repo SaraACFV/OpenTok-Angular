@@ -41,9 +41,9 @@ ng.module('opentok', [])
               customServers: [
                 {
                   urls: [
-                    'turn:turn001-pek.tokbox.com:443?transport=udp',
-                    'turn:turn001-pek.tokbox.com:443?transport=tcp',
-                    'turns:turn001-pek.tokbox.com:443?transport=tcp'
+                    'turn:turn001-pek.tokbox.com:3478?transport=udp',
+                    'turn:turn001-pek.tokbox.com:3478?transport=tcp',
+                    'turns:turn001-pek.tokbox.com:3478?transport=tcp'
                   ],
                   username,
                   credential
