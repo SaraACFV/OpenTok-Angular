@@ -43,8 +43,7 @@ ng.module('opentok', [])
                   urls: [
                     'turn:54.223.54.52:3478?transport=udp',
                     'stun:54.223.54.52:3478:3478',
-                    'turn:54.223.54.52:443?transport=tcp',
-                    'turns:turn001-pek.tokbox.com:443?transport=tcp'
+                    'turn:54.223.54.52:443?transport=tcp'
                   ],
                   username,
                   credential
